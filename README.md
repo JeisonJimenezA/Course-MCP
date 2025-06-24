@@ -97,11 +97,10 @@ python mcp_chatbot.py
 ## 📁 Structure
 
 ```
-Course-MCP/
+chatbot-arxiv/
 ├── mcp_server.py     # MCP server
 ├── mcp_client.py     # Test client
-├── mcp_chatbot.py    # Chatbot
-└── papers/           # Local data
+└── mcp_chatbot.py    # Chatbot
 ```
 
 ## 🧠 MCP Concepts
