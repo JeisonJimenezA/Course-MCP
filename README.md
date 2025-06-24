@@ -9,13 +9,25 @@
 ## 🏗️ Interaction Diagram
 
 ```mermaid
-graph LR
-    A[User] --> B[Chatbot]
-    B --> C[OpenAI GPT]
-    B --> D[MCP Client]
-    D --> E[MCP Server]
-    E --> F[arXiv API]
-    E --> G[Local Storage]
+sequenceDiagram
+    participant U as User
+    participant C as Chatbot
+    participant O as OpenAI GPT
+    participant M as MCP Server
+    participant A as arXiv API
+    participant S as Local Storage
+
+    U->>C: "Search papers about ML"
+    C->>O: Send query + available tools
+    O->>C: Returns tool_calls: search_papers()
+    C->>M: Call search_papers(topic="ML")
+    M->>A: Fetch papers
+    A->>M: Return paper data
+    M->>S: Store papers locally
+    M->>C: Return paper IDs
+    C->>O: Send tool results
+    O->>C: Generate final response
+    C->>U: "Found 5 papers about ML..."
 ```
 
 ## 📦 Components
@@ -118,3 +130,6 @@ cd Course-MCP && python mcp_chatbot.py
 - [GitHub MCP](https://github.com/github/github-mcp-server)
 - [Awesome MCP](https://github.com/punkpeye/awesome-mcp-servers)
 
+---
+
+**⭐ Star if this helps you!**
