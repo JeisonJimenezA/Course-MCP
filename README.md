@@ -118,6 +118,3 @@ cd Course-MCP && python mcp_chatbot.py
 - [GitHub MCP](https://github.com/github/github-mcp-server)
 - [Awesome MCP](https://github.com/punkpeye/awesome-mcp-servers)
 
----
-
-**⭐ Star if this helps you!**
